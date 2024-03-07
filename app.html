@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            overflow: hidden;
+            background: url('Làm người yêu anh nhé.gif') no-repeat center center fixed;
+            object-fit: cover;        
+    }
+        .btn-container-no,.btn-container-yes {
+            background-color: rgb(252, 205, 244);
+            padding: 10px;
+            width: 60px;
+            border-radius: 10px;
+        }
+        .btn-container-no, .btn-container-yes{
+            position: relative;
+        }
+        #yes-btn {
+            font-family: 'Roboto', sans-serif; /* Sử dụng font Roboto cho chữ YES */
+        }
+        
+        #no-btn {
+            font-family: 'Arial', sans-serif; /* Sử dụng font Arial cho chữ NO */
+        }
+        
+        #no {
+            position: absolute;
+            top: 50%;
+            right: 40%;
+            transition: all 0.3s;
+        }
+        #yes {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transition: all 0.3s;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        #yes,#no {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div id="yes" class="btn-container-yes">
+            <button type="button" id="yes-btn">YES</button>
+        </div>
+        <div id="no" class="btn-container-no">
+            <button type="button" id="no-btn">NO</button>
+        </div>
+    </main>
+    <script>
+        const yes = document.getElementById('yes');
+        const no = document.getElementById('no');
+
+        no.addEventListener('mouseover', () => {
+            const x = Math.floor(Math.random() * (window.innerWidth - 150));
+            const y = Math.floor(Math.random() * (window.innerHeight - 150));
+            no.style.left = `${x}px`;
+            no.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
